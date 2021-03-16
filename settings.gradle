@@ -3,7 +3,8 @@ dependencyResolutionManagement {
     repositories {
         google()
         jcenter()
+        maven { url "https://jitpack.io" }
     }
 }
 rootProject.name = "TulauCore"
-include ':app'
+include ':app', ':base'
