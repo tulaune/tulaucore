@@ -24,20 +24,17 @@ android {
     }
 }
 
-
-buildscript {
-    repositories {
-        mavenCentral()
-    }
-
-    dependencies {
-        classpath 'com.github.dcendents:android-maven-plugin:1.0'
-    }
+repositories {
+    jcenter()
+    mavenCentral()
+    maven { url "https://www.jitpack.io" }
+    google()
 }
 
 
-
 dependencies {
+    /*classpath 'com.github.dcendents:android-maven-plugin:1.0'*/
+
     api 'com.android.support:multidex:1.0.3'
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     api 'androidx.appcompat:appcompat:1.2.0'
