@@ -16,6 +16,28 @@ buildscript {
     }
 }
 
+allprojects {
+    repositories {
+        mavenCentral()
+        google()
+        maven { url "https://jitpack.io" }
+        jcenter()
+    }
+}
+
 task clean(type: Delete) {
     delete rootProject.buildDir
+}
+
+ext {
+    kotlin_version = "1.4.31"
+
+    min_sdk_version = 23
+    target_sdk_version = 30
+
+    compile_sdk_version = 30
+    build_tools_version = "30.0.2"
+
+    app_version = "1.0.0"
+    android_version = 1
 }
