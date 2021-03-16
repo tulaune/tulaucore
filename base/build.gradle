@@ -4,7 +4,9 @@ apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-kapt'
 
-apply plugin: "maven"
+apply plugin: 'maven'
+
+group='com.github.tulaune'
 
 android {
     compileSdkVersion 30
