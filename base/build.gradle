@@ -1,13 +1,10 @@
-//plugins {
-//    id 'com.android.application'
-//    id 'kotlin-android'
-//    id 'kotlin-kapt'
-//}
 apply plugin: 'com.android.library'
 
 apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-kapt'
+
+apply plugin: "maven"
 
 android {
     compileSdkVersion 30
@@ -26,6 +23,18 @@ android {
         }
     }
 }
+
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath 'com.github.dcendents:android-maven-plugin:1.0'
+    }
+}
+
 
 
 dependencies {

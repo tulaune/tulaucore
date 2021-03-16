@@ -7,4 +7,5 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "TulauCore"
-include ':app', ':base'
+include ':app'
+include ':base'
