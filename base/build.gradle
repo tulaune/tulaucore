@@ -1,5 +1,5 @@
 plugins {
-    id 'com.android.library'
+//    id 'com.android.library'
     id 'kotlin-android'
     id 'kotlin-kapt'
     id 'maven'
@@ -44,11 +44,22 @@ android {
 afterEvaluate {
     publishing {
         publications {
-            // Creates a Maven publication called "release".
-            release(MavenPublication) {
-                from components.release
+            paidRelease(MavenPublication) {
+                // The following applies a component to this publication
+                // which results in publishing an app bundle.
+                //from components.paidRelease_aab
+
                 groupId = 'com.github.tulaune'
-                artifactId = 'tulaucore'
+                artifactId = 'tulaucore-release-aab'
+                version = '1.0.0'
+            }
+            paidDebug(MavenPublication) {
+                // The following applies a component to this publication
+                // which results in publishing APKs in a ZIP file.
+                //from components.paidDebug_apk
+
+                groupId = 'com.github.tulaune'
+                artifactId = 'tulaucore-debug-apks'
                 version = '1.0.0'
             }
         }
@@ -92,7 +103,7 @@ afterEvaluate {
 //        }
 //    }
 //}
-//
+
 //afterEvaluate {
 //    publishing {
 //        publications {
